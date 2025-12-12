@@ -5,9 +5,12 @@
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg') }}">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-  {% block title %}{% endblock %}
+  {% block title %}
+    {% endblock %}
 </head>
 <body id="body">
+{% include 'components/elements/header.html' %}
+
 {% block body %}
 {% endblock %}
 
