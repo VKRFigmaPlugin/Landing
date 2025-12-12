@@ -1,13 +1,9 @@
 ## Запуск проекта под Windows и macOS
 
-### Требования
-- Python 3.12+ установлен в системе
-- Git (для клонирования репозитория)
-
 ### 1. Клонирование репозитория
 ```bash
-git clone <url-репозитория> Education
-cd Education
+git clone <url-репозитория>
+cd VKR
 ```
 
 ### 2. Создание и активация виртуального окружения
@@ -17,7 +13,7 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-- **macOS / Linux (bash/zsh)**
+- **macOS / Linux**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -29,14 +25,9 @@ pip install -r requirements.txt
 ```
 
 ### 4. Запуск приложения
-Запускаем встроенный сервер Flask (подходит для разработки):
+Запускаем встроенный сервер Flask:
 ```bash
-python -m flask --app app.app --debug run
+cd app
+flask run
 ```
 По умолчанию приложение будет доступно по адресу http://127.0.0.1:5000
-
-### 5. Дополнительные замечания
-- Если порт 5000 занят, укажите другой: `python -m flask --app app.app --debug run --port 8000`
-- При работе без `--debug` изменения кода не будут перезагружать сервер автоматически.
-- Для остановки сервера нажмите `Ctrl+C` в терминале.
-
