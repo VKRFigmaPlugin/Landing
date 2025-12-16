@@ -25,11 +25,11 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  &__main {
+.main {
+  &__container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1440px;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0;
   }
 }
