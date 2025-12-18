@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Автогенерация карточек{% endblock %}</title>
+  
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg') }}">
-
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-  {% block title %}
-    {% endblock %}
+  
+  {% block extra_css %}{% endblock %}
 </head>
 <body id="body">
-<div class="main__container">
-{% include 'components/elements/header.html' %}
+  {% include 'components/elements/header.html' %}
+  
+  <main class="page-content">
+    <div class="full-width-title">
+      <div class="main__container">
+        <h1 class="page-title">
+          <span class="title-line title-line-1">Автогенерация</span>
+          <span class="title-line title-line-2">карточек</span>
+        </h1>
+      </div>
+    </div>
+    
+    <div class="main__container">
+      {% block body %}
+      {% endblock %}
+    </div>
+  </main>
 
-{% block body %}
-{% endblock %}
-</div>
-
-{% block scripts %}{% endblock %}
+  {% block scripts %}{% endblock %}
+  {% block extra_js %}{% endblock %}
 </body>
 </html>
