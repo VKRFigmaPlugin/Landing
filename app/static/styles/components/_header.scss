@@ -8,7 +8,22 @@
   position: sticky;
   top: 0;
   left: 0;
-  padding: 21px 0;
+  padding: 21px 0px;
+  z-index: 1000;
+  height: auto;
+  background-color:transparent;
+  
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
 
   &:after {
     content: "";
