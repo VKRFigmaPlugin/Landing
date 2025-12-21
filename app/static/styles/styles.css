@@ -148,7 +148,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 .hero__title {
   font-family: "Montserrat", sans-serif;
@@ -285,5 +285,74 @@ body {
     font-size: 40px;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
+.pain-points {
+  padding: 40px 0 80px 0;
+  background-color: #000000;
+  color: #EEE7D2;
+}
+.pain-points__simple {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+.pain-points__label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  margin: 0;
+  flex: 0 0 220px;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.pain-points__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+  max-width: 900px;
+  text-align: left;
+  font-weight: 400;
+}
+@media (max-width: 1024px) {
+  .pain-points {
+    padding: 80px 0;
+  }
+  .pain-points__simple {
+    gap: 60px;
+  }
+  .pain-points__label {
+    font-size: 40px;
+    flex: 0 0 180px;
+  }
+  .pain-points__text {
+    font-size: 20px;
+    max-width: 800px;
+  }
+}
+@media (max-width: 768px) {
+  .pain-points {
+    padding: 60px 0;
+  }
+  .pain-points__simple {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .pain-points__label {
+    font-size: 36px;
+    flex: none;
+  }
+  .pain-points__text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 480px) {
+  .pain-points__label {
+    font-size: 32px;
+  }
+  .pain-points__text {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=styles.css.map */
