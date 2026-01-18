@@ -1,0 +1,50 @@
+<!-- templates/components/parts/index/features.html -->
+<section class="features">
+  <div class="main__container">
+    <h2 class="features__main-heading">Что делает плагин</h2>
+    
+    <div class="features__block">
+      <div class="features__content">
+        <div class="features__text">
+          <h3 class="features__item-title">
+            <span class="features__title-line">Использует готовые шаблоны</span>
+            <span class="features__title-line">маркетплейсов</span>
+          </h3>
+          
+          <p class="features__item-description">
+            <span class="features__desc-line">Готовые шаблоны под</span>
+            <span class="features__desc-line">требования маркетплейсов</span>
+          </p>
+          
+          <div class="features__subitems">
+            <!-- Первая строка -->
+            <div class="features__subrow">
+              <div class="features__subitem features__subitem--sizes">
+                <span class="features__subitem-text">Правильные размеры</span>
+              </div>
+              <div class="features__subitem features__subitem--grid">
+                <span class="features__subitem-text">Сетка</span>
+              </div>
+            </div>
+            
+            <!-- Вторая строка -->
+            <div class="features__subrow">
+              <div class="features__subitem features__subitem--typography">
+                <span class="features__subitem-text">Типографика</span>
+              </div>
+              <div class="features__subitem features__subitem--composition">
+                <span class="features__subitem-text">Композиция</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features__image-wrapper">
+          <img src="{{ url_for('static', filename='images/index/featuresOverview/1.webp') }}" 
+               alt="Шаблоны маркетплейсов" 
+               class="features__image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
