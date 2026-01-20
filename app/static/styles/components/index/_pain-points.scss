@@ -1,6 +1,5 @@
 .pain-points {
   padding: 40px 0 80px 0;
-  background-color: $color-base-black;
   color: $color-accent-primary;
   
   &__simple {
@@ -17,6 +16,7 @@
     flex: 0 0 220px; 
     text-align: left;
     line-height: 1.2;
+    color: $color-base-white;
     letter-spacing: -0.5px;
   }
   
