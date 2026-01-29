@@ -1,4 +1,3 @@
-<!-- templates/components/parts/index/features.html -->
 <section class="features color-background--dark">
   <div class="main__container">
     <h2 class="features__main-heading">Что делает плагин</h2>
@@ -17,7 +16,6 @@
           </p>
           
           <div class="features__subitems">
-            <!-- Первая строка -->
             <div class="features__subrow">
               <div class="features__subitem features__subitem--sizes">
                 <span class="features__subitem-text">Правильные размеры</span>
@@ -27,7 +25,6 @@
               </div>
             </div>
             
-            <!-- Вторая строка -->
             <div class="features__subrow">
               <div class="features__subitem features__subitem--typography">
                 <span class="features__subitem-text">Типографика</span>
@@ -40,9 +37,37 @@
         </div>
         
         <div class="features__image-wrapper">
-          <img src="{{ url_for('static', filename='images/index/featuresOverview/1.webp') }}" 
-               alt="Шаблоны маркетплейсов" 
-               class="features__image">
+          <div class="features__cards-container">
+            <div class="features__card features__card--farleft">
+              <img src="{{ url_for('static', filename='images/index/featuresOverview/firstBlock/FarLeft.webp') }}" 
+                   alt="Far Left" 
+                   class="features__card-image">
+            </div>
+            
+            <div class="features__card features__card--left">
+              <img src="{{ url_for('static', filename='images/index/featuresOverview/firstBlock/Left.webp') }}" 
+                   alt="Left" 
+                   class="features__card-image">
+            </div>
+            
+            <div class="features__card features__card--center">
+              <img src="{{ url_for('static', filename='images/index/featuresOverview/firstBlock/Center.webp') }}" 
+                   alt="Center" 
+                   class="features__card-image">
+            </div>
+            
+            <div class="features__card features__card--right">
+              <img src="{{ url_for('static', filename='images/index/featuresOverview/firstBlock/Right.webp') }}" 
+                   alt="Right" 
+                   class="features__card-image">
+            </div>
+            
+            <div class="features__card features__card--farright">
+              <img src="{{ url_for('static', filename='images/index/featuresOverview/firstBlock/FarRight.webp') }}" 
+                   alt="Far Right" 
+                   class="features__card-image">
+            </div>
+          </div>
         </div>
       </div>
     </div>

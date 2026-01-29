@@ -7,10 +7,11 @@
 
 {% block body %}
   {% include 'components/parts/index/hero.html' %}
-  {% include 'components/parts/index/features.html' %}
   {% include 'components/parts/index/pain-points.html' %}
+  {% include 'components/parts/index/features.html' %}
 {% endblock %}
 
 {% block scripts %}
+  <script src="{{ url_for('static', filename='js/features-animation.js') }}"></script>
 {% endblock %}
 
