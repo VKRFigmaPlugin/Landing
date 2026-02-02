@@ -68,7 +68,7 @@
       width: 380px; 
       height: 500px; 
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1) rotateY(0);
+      transform: translate(-50%, -50%) translateZ(40px) scale(1) rotateY(0);
       z-index: 3;
       filter: drop-shadow(0 20px 50px rgba(243, 188, 194, 0.7));
       left: 50%;
@@ -78,12 +78,12 @@
       width: 500px;
       height: 600px;
       opacity: 0; 
-      transform: translate(-50%, -50%) scale(0.9) rotateY(0);
+      transform: translate(-50%, -50%) translateZ(-40px) scale(0.9) rotateY(0);
       z-index: 1;
       filter: drop-shadow(0 8px 20px rgba(243, 188, 194, 0.3)) brightness(0.85);
       left: 50%;
-      animation: slideToFarLeft 1s ease-out forwards;
-      animation-delay: 0.3s;
+      animation: slideToFarLeft 0.9s ease-out forwards;
+      animation-delay: 0.25s;
       animation-play-state: paused; 
     }
     
@@ -91,7 +91,7 @@
       width: 280px;
       height: 380px; 
       opacity: 0; 
-      transform: translate(-50%, -50%) scale(1) rotateY(0);
+      transform: translate(-50%, -50%) translateZ(0) scale(1) rotateY(0);
       z-index: 2;
       filter: drop-shadow(0 12px 35px rgba(243, 188, 194, 0.5)) brightness(0.9);
       left: 50%;
@@ -104,7 +104,7 @@
       width: 400px; 
       height: 500px; 
       opacity: 0; 
-      transform: translate(-50%, -50%) scale(1) rotateY(0);
+      transform: translate(-50%, -50%) translateZ(0) scale(1) rotateY(0);
       z-index: 2;
       filter: drop-shadow(0 12px 35px rgba(243, 188, 194, 0.5)) brightness(0.9);
       left: 50%;
@@ -117,81 +117,81 @@
       width: 320px;
       height: 420px;
       opacity: 0; 
-      transform: translate(-50%, -50%) scale(0.9) rotateY(0);
+      transform: translate(-50%, -50%) translateZ(-40px) scale(0.9) rotateY(0);
       z-index: 1;
       filter: drop-shadow(0 8px 20px rgba(243, 188, 194, 0.3)) brightness(0.85);
       left: 50%;
-      animation: slideToFarRight 1s ease-out forwards;
-      animation-delay: 0.3s;
+      animation: slideToFarRight 0.9s ease-out forwards;
+      animation-delay: 0.25s;
       animation-play-state: paused; 
     }
   }
   
   @keyframes slideToLeft {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1) rotateY(0);
+      opacity: 1;
+      transform: translate(-50%, -50%) translateZ(0) scale(1) rotateY(0);
     }
     20% {
-      opacity: 0.3;
+      opacity: 1;
     }
     50% {
-      opacity: 0.7;
+      opacity: 1;
     }
     100% {
       opacity: 1;
-      transform: translate(calc(-50% - 225px), calc(-50% + 15px)) scale(1) rotateY(-8deg);
+      transform: translate(calc(-50% - 225px), calc(-50% + 15px)) translateZ(0) scale(1) rotateY(-8deg);
     }
   }
   
   @keyframes slideToRight {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1) rotateY(0);
+      opacity: 1;
+      transform: translate(-50%, -50%) translateZ(0) scale(1) rotateY(0);
     }
     20% {
-      opacity: 0.3;
+      opacity: 1;
     }
     50% {
-      opacity: 0.7;
+      opacity: 1;
     }
     100% {
       opacity: 1;
-      transform: translate(calc(-50% + 265px), calc(-50% + 15px)) scale(1) rotateY(8deg);
+      transform: translate(calc(-50% + 265px), calc(-50% + 15px)) translateZ(0) scale(1) rotateY(8deg);
     }
   }
   
   @keyframes slideToFarLeft {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9) rotateY(0);
+      opacity: 1;
+      transform: translate(-50%, -50%) translateZ(-40px) scale(0.9) rotateY(0);
     }
     20% {
-      opacity: 0.2;
+      opacity: 1;
     }
     50% {
-      opacity: 0.5;
+      opacity: 1;
     }
     100% {
       opacity: 1;
-      transform: translate(calc(-50% - 275px), calc(-50% + 43px)) scale(0.9) rotateY(-15deg);
+      transform: translate(calc(-50% - 275px), calc(-50% + 43px)) translateZ(-40px) scale(0.9) rotateY(-15deg);
     }
   }
   
   @keyframes slideToFarRight {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9) rotateY(0);
+      opacity: 1;
+      transform: translate(-50%, -50%) translateZ(-40px) scale(0.9) rotateY(0);
     }
     20% {
-      opacity: 0.2;
+      opacity: 1;
     }
     50% {
-      opacity: 0.5;
+      opacity: 1;
     }
     100% {
       opacity: 1;
-      transform: translate(calc(-50% + 288px), calc(-50% + 115px)) scale(0.9) rotateY(-10deg);
+      transform: translate(calc(-50% + 288px), calc(-50% + 115px)) translateZ(-40px) scale(0.9) rotateY(-10deg);
     }
   }
   
@@ -234,8 +234,8 @@
   &__item-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.2;
     margin: 0 0 16px 0;
     color: $color-base-white;
     text-align: left;
