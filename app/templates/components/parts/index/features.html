@@ -101,30 +101,34 @@
         </div>
         
         <div class="features__image-wrapper">
-          <div class="features__slider slider" style="--value: 50%;">
-            <picture>
-              <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/Before.webp') }}" 
-                   alt="До обработки плагином" 
-                   class="slider__img slider__img--before"
-                   width="600" 
-                   height="400">
-            </picture>
-            <picture>
-              <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/After.webp') }}" 
-                   alt="После обработки плагином" 
-                   class="slider__img slider__img--after"
-                   width="600" 
-                   height="400">
-            </picture>
-            <label for="slider-range-second" class="visually-hidden">Переместите ползунок, чтобы сравнить изображения до и после</label>
-            <input type="range" 
-                   class="slider__range slider__range-js" 
-                   min="0" 
-                   max="100" 
-                   value="50" 
-                   step="1" 
-                   id="slider-range-second">
-            <div class="slider__range-visible"></div>
+          <div class="features__slider-stage">
+            <div class="features__slider slider" style="--value: 0%;">
+              <span class="slider__label slider__label--before">До</span>
+              <span class="slider__label slider__label--after">После</span>
+              <picture class="slider__img-container">
+                <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/Before.webp') }}" 
+                     alt="До обработки плагином" 
+                     class="slider__img slider__img--before"
+                     width="600" 
+                     height="400">
+              </picture>
+              <picture>
+                <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/After.webp') }}" 
+                     alt="После обработки плагином" 
+                     class="slider__img slider__img--after"
+                     width="600" 
+                     height="400">
+              </picture>
+              <label for="slider-range-second" class="visually-hidden">Переместите ползунок, чтобы сравнить изображения до и после</label>
+              <input type="range" 
+                     class="slider__range slider__range-js" 
+                     min="0" 
+                     max="100" 
+                     value="0" 
+                     step="1" 
+                     id="slider-range-second">
+              <div class="slider__range-visible"></div>
+            </div>
           </div>
         </div>
       </div>
