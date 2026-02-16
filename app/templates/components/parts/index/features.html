@@ -71,5 +71,67 @@
         </div>
       </div>
     </div>
+    
+    <div class="features__block features__block--second">
+      <div class="features__content">
+        <div class="features__text">
+          <h3 class="features__item-title">
+            <span class="features__title-line">Автоматически заполняет</span>
+            <span class="features__title-line">макеты</span>
+          </h3>
+          
+          <p class="features__item-description">
+            <span class="features__desc-line">Данные автоматически размещаются</span>
+            <span class="features__desc-line">в нужных слоях</span>
+          </p>
+          
+          <div class="features__subitems">
+            <div class="features__subitem features__subitem--images">
+              <span class="features__subitem-text">Изображения масштабируются</span>
+            </div>
+            
+            <div class="features__subitem features__subitem--styles">
+              <span class="features__subitem-text">Стили применяются автоматически</span>
+            </div>
+            
+            <div class="features__subitem features__subitem--text">
+              <span class="features__subitem-text">Текст форматируется</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features__image-wrapper">
+          <div class="features__slider-stage">
+            <div class="features__slider slider" style="--value: 0%;">
+              <span class="slider__label slider__label--before">До</span>
+              <span class="slider__label slider__label--after">После</span>
+              <picture class="slider__img-container">
+                <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/Before.webp') }}" 
+                     alt="До обработки плагином" 
+                     class="slider__img slider__img--before"
+                     width="600" 
+                     height="400">
+              </picture>
+              <picture>
+                <img src="{{ url_for('static', filename='images/index/featuresOverview/secondBlock/After.webp') }}" 
+                     alt="После обработки плагином" 
+                     class="slider__img slider__img--after"
+                     width="600" 
+                     height="400">
+              </picture>
+              <label for="slider-range-second" class="visually-hidden">Переместите ползунок, чтобы сравнить изображения до и после</label>
+              <input type="range" 
+                     class="slider__range slider__range-js" 
+                     min="0" 
+                     max="100" 
+                     value="0" 
+                     step="1" 
+                     id="slider-range-second">
+              <div class="slider__range-visible"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
