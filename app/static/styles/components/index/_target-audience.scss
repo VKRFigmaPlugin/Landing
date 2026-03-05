@@ -1,12 +1,24 @@
 .target-audience {
   width: 100%;
-  background-color: #000;
-  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+  //overflow: clip;
+
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: min(-20px, (-100dvw + 1400px) / 2);
+    top: 0;
+    width: 100dvw;
+    height: 100%;
+    background-color: #000000;
+    z-index: -2;
+  }
 
   &__container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 20px;
+    position: relative;
+    z-index: 1;
   }
 
   &__main-heading {
@@ -20,66 +32,109 @@
     flex-direction: column;
   }
 
-  &__content {
-    display: flex;
-    gap: 40px;
-    max-width: 1140px;
-    margin: 0 auto;
+  &__track {
+    position: relative;
+    height: 220vh;
   }
 
-  &__icon-block {
-    background-color: #EEE7D2;
-    border-radius: 16px;
-    width: 50%;
-    height: 614px;
+  &__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: min(-20px, (-100dvw + 1400px) / 2);
+      top: 0;
+      width: 50vw;
+      height: 100%;
+      background-color: #EEE7D2;
+      z-index: -1;
+    }
+  }
+
+  &__left {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 32px;
   }
 
-  &__icon-wrapper {
-    position: relative;
-    width: 186px;
-    height: 120px;
+  &__visual {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+            opacity 0.6s ease,
+            transform 0.6s ease;
+    pointer-events: none;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease;
-
-    &--designers {
-      opacity: 1;
-    }
-
-    &--sellers {
-      opacity: 0;
-    }
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 
-  &__text-block {
-    width: 50%;
-    height: 614px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  &__right {
     position: relative;
   }
 
-  &__dynamic-content {
-    opacity: 1;
-    transition: opacity 0.3s ease;
+  &__panels {
+    position: relative;
+    width: 100%;
+  }
+
+  &__panel {
+    position: absolute;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 32px;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+            opacity 0.6s ease,
+            transform 0.6s ease;
+    pointer-events: none;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  &__content-box {
+    width: 100%;
   }
 
   &__title {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 50px;
-    margin-bottom: 30px;
+    line-height: 1.1;
+    margin: 0 0 30px;
     color: #EEE7D2;
   }
 
@@ -88,7 +143,7 @@
     padding-left: 24px;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -107,6 +162,10 @@
     gap: 20px;
   }
 
+  &__list-item {
+    margin: 0;
+  }
+
   &__item-text {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
@@ -117,36 +176,85 @@
 
   &__scroll-hint {
     position: absolute;
-    bottom: 20px;
-    right: 0;
-    font-size: 14px;
-    color: #EEE7D2;
-    opacity: 0.5;
+    right: 32px;
+    bottom: 24px;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 14px;
+    color: #EEE7D2;
+    opacity: 0.5;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
   }
 
-  &--sellers &__icon--designers {
+  &.is-switched &__scroll-hint {
     opacity: 0;
   }
 
-  &--sellers &__icon--sellers {
-    opacity: 1;
-  }
-
   @media (max-width: 900px) {
-    &__content {
-      flex-direction: column;
+    &__main-heading {
+      font-size: 36px;
+      margin-bottom: 32px;
     }
 
-    &__icon-block,
-    &__text-block {
-      width: 100%;
+    &__track {
       height: auto;
-      min-height: 400px;
+    }
+
+    &__sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+
+      &:after {
+        width: 100dvw;
+        height: 280px;
+      }
+    }
+
+    &__left {
+      min-height: 280px;
+      padding: 24px 20px;
+    }
+
+    &__right {
+      padding: 24px 20px 48px;
+    }
+
+    &__visuals {
+      width: 180px;
+      height: 140px;
+    }
+
+    &__panels {
+      min-height: auto;
+    }
+
+    &__panel {
+      position: relative;
+      inset: auto;
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+      transition: none;
+
+      &:not(.is-active) {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+
+    &__scroll-hint {
+      display: none;
     }
   }
 }
