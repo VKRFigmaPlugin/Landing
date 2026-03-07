@@ -10,10 +10,12 @@
   {% include 'components/parts/index/pain-points.html' %}
   {% include 'components/parts/index/features.html' %}
   {% include 'components/parts/index/target-audience.html' %}
+  {% include 'components/parts/index/faq.html' %}
 {% endblock %}
 
 {% block scripts %}
   <script src="{{ url_for('static', filename='js/features-animation.js') }}"></script>
   <script src="{{ url_for('static', filename='js/target-audience.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
 {% endblock %}
 
