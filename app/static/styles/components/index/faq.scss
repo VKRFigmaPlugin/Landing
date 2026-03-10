@@ -3,8 +3,19 @@
   width: 100%;
   position: relative;
   z-index: 1;
-  padding: 100px 0;
-  background-color: $color-base-black;
+  padding-top: 100px;
+
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: min(-20px, (-100dvw + 1400px) / 2);
+    top: 0;
+    width: 100dvw;
+    height: 100%;
+    background-color: #000000;
+    z-index: -2;
+  }
 
   &__container {
     max-width: 1440px;
@@ -13,7 +24,6 @@
   }
 
   &__content {
-    max-width: 1140px;
     margin: 0 auto;
   }
 
@@ -72,7 +82,7 @@
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 22px;
     line-height: 1.5;
     color: $color-base-black;
     text-align: left;
