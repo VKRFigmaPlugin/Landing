@@ -29,20 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Фазы:
-        // 0.00 - 0.42  -> первый слайд полностью виден
-        // 0.42 - 0.56  -> первый слайд уходит
-        // 0.56 - 0.64  -> пауза между слайдами
-        // 0.64 - 1.00  -> второй слайд появляется / виден
+        // 0.00 - 0.56  -> первый слайд остаётся видимым
+        // 0.56 - 1.00  -> показываем второй слайд
+        //
+        // Раньше между состояниями была "пустая зона", где оба блока снимались.
+        // Теперь первый блок держится до момента фактического переключения.
 
         const isLeavingFirst = progress >= 0.42;
-        const isShowingSecond = progress >= 0.64;
+        const isShowingSecond = progress >= 0.56;
+        const isShowingFirst = !isShowingSecond;
 
         section.classList.toggle('is-leaving-first', isLeavingFirst);
         section.classList.toggle('is-showing-second', isShowingSecond);
         section.classList.toggle('is-switched', isShowingSecond);
 
-        firstVisual.classList.toggle('is-active', !isLeavingFirst);
-        firstPanel.classList.toggle('is-active', !isLeavingFirst);
+        firstVisual.classList.toggle('is-active', isShowingFirst);
+        firstPanel.classList.toggle('is-active', isShowingFirst);
 
         secondVisual.classList.toggle('is-active', isShowingSecond);
         secondPanel.classList.toggle('is-active', isShowingSecond);
