@@ -1025,10 +1025,10 @@ body {
 }
 @media (max-width: 1440px) {
   .hero__title-line-1, .hero__title-line-2 {
-    font-size: 100px;
+    font-size: 11vw;
   }
   .hero__slider {
-    height: 205px;
+    height: 330px;
   }
 }
 @media (max-width: 768px) {
@@ -1090,7 +1090,7 @@ body {
   max-width: 300px;
   text-align: left;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #EEE7D2;
 }
 .features__text {
   max-width: 353px;
@@ -1582,59 +1582,19 @@ body {
   flex: 0 0 220px;
   text-align: left;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #EEE7D2;
   letter-spacing: -0.5px;
 }
 .pain-points__text {
   font-family: "Montserrat", sans-serif;
-  font-size: 22px;
+  font-size: 17px;
   line-height: 1.7;
   margin: 0;
   flex: 1;
+  color: rgba(255, 255, 255, 0.6);
   max-width: 900px;
   text-align: left;
   font-weight: 400;
-}
-@media (max-width: 1024px) {
-  .pain-points {
-    padding: 80px 0;
-  }
-  .pain-points__simple {
-    gap: 60px;
-  }
-  .pain-points__label {
-    font-size: 40px;
-    flex: 0 0 180px;
-  }
-  .pain-points__text {
-    font-size: 20px;
-    max-width: 800px;
-  }
-}
-@media (max-width: 768px) {
-  .pain-points {
-    padding: 60px 0;
-  }
-  .pain-points__simple {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .pain-points__label {
-    font-size: 36px;
-    flex: none;
-  }
-  .pain-points__text {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-@media (max-width: 480px) {
-  .pain-points__label {
-    font-size: 32px;
-  }
-  .pain-points__text {
-    font-size: 16px;
-  }
 }
 
 .target-audience {
