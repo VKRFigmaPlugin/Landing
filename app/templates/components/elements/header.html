@@ -1,7 +1,9 @@
 <header class="header">
   <div class="header__container">
     <div class="header__logo">
-      <a href="{{ url_for('index') }}" class="logo-text">Logo</a>
+      <a href="{{ url_for('index') }}" class="logo-text">
+          <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="">
+      </a>
     </div>
 
     <nav class="header__nav">

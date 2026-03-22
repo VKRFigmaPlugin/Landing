@@ -107,6 +107,10 @@ body {
   text-decoration: none;
   font-weight: 700;
 }
+.header__logo .logo-text img {
+  height: 64px;
+  width: 64px;
+}
 .header__nav {
   position: absolute;
   left: 50%;
@@ -252,6 +256,10 @@ body {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
+.footer__logo img {
+  height: 64px;
+  width: 64px;
+}
 
 .about-page {
   width: 100%;
@@ -298,7 +306,7 @@ body {
 }
 
 .about-hero {
-  min-height: calc(100vh - 78px);
+  min-height: calc(100vh - 110px);
   display: flex;
   align-items: center;
 }
@@ -929,7 +937,7 @@ body {
 }
 .hero {
   width: 100%;
-  min-height: calc(100vh - 78px);
+  min-height: calc(100vh - 110px);
   position: relative;
   z-index: 1;
   display: flex;
