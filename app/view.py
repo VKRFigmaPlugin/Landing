@@ -4,3 +4,8 @@ from flask import render_template
 class IndexPage(MethodView):
     def get(self):
         return render_template('pages/index.html')
+
+
+class AboutPage(MethodView):
+    def get(self):
+        return render_template('pages/about.html')

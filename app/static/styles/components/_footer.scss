@@ -3,7 +3,7 @@
   padding: 100px 32px 40px 32px;
   position: relative;
 
-  &:after {
+  &:before {
     content: "";
     position: absolute;
     background-color: $color-accent-primary;
@@ -12,6 +12,11 @@
     width: 100dvw;
     height: 100%;
     z-index: -1;
+  }
+
+  &:after {
+    top: -192px !important;
+
   }
 
   &__text-container {

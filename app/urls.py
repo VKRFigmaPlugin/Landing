@@ -1,8 +1,9 @@
-from app.view import IndexPage
+from app.view import AboutPage, IndexPage
 from flask import Flask
 
 URLS = {
     '/': (IndexPage, 'index'),
+    '/about': (AboutPage, 'about'),
 }
 
 
