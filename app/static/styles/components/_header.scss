@@ -12,7 +12,6 @@
   z-index: 1000;
   height: auto;
   background-color: transparent;
-  
 
   &__container {
     width: 100%;
@@ -54,7 +53,6 @@
   }
 
   &__logo {
-
     .logo-text {
       color: $color-accent-primary;
       font-size: 1.5rem;
@@ -82,9 +80,7 @@
     align-content: center;
     
     width: auto;
-    
     max-width: 70%;
-    
     white-space: nowrap;
 
     .nav-list {
@@ -117,8 +113,9 @@
         width: 0;
         height: 2px;
         background: $color-accent-primary;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         transform: translateX(-50%);
+        border-radius: 1px;
       }
       
       &:hover::after {
@@ -126,11 +123,17 @@
         left: 0;
         transform: translateX(0);
       }
+      
+      &.active::after {
+        width: 100% !important;
+        left: 0 !important;
+        transform: translateX(0) !important;
+      }
+      
     }
   }
 
   &__actions {
-
     .btn {
       background-color: transparent;
       border: 2px solid $color-accent-primary;
@@ -256,12 +259,12 @@
 @media (max-width: 480px) {
   .header {
     &__nav {
-      .nav-link {
-        font-size: 12px;
-      }
-      
       .nav-list {
         gap: 8px;
+      }
+      
+      .nav-link {
+        font-size: 12px;
       }
     }
   }
