@@ -1,18 +1,18 @@
 .header {
   color: $color-accent-primary;
   width: 100%;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   left: 0;
-  padding: 21px 0px;
+  padding: 21px 0;
   z-index: 1000;
   height: auto;
-  background-color:transparent;
-  
+  background-color: transparent;
+  isolation: isolate;
 
   &__container {
     width: 100%;
@@ -21,8 +21,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
     position: relative;
-    z-index: 1;
+    z-index: 3;
   }
 
   &:after {
@@ -32,28 +33,29 @@
     top: 0;
     z-index: -1;
     background: linear-gradient(
-                    to bottom,
-                    rgb(20, 20, 20) 0%,
-                    rgba(20, 20, 20, 0.99) 11%,
-                    rgba(20, 20, 20, 0.95) 21%,
-                    rgba(20, 20, 20, 0.89) 30%,
-                    rgba(20, 20, 20, 0.82) 38%,
-                    rgba(20, 20, 20, 0.74) 45%,
-                    rgba(20, 20, 20, 0.65) 51%,
-                    rgba(20, 20, 20, 0.55) 57%,
-                    rgba(20, 20, 20, 0.45) 63%,
-                    rgba(20, 20, 20, 0.40) 65%,
-                    rgba(20, 20, 20, 0.26) 73%,
-                    rgba(20, 20, 20, 0.11) 83%,
-                    rgba(20, 20, 20, 0.05) 88%,
-                    rgba(20, 20, 20, 0.01) 94%,
-                    rgba(20, 20, 20, 0) 100%
+      to bottom,
+      rgb(20, 20, 20) 0%,
+      rgba(20, 20, 20, 0.99) 11%,
+      rgba(20, 20, 20, 0.95) 21%,
+      rgba(20, 20, 20, 0.89) 30%,
+      rgba(20, 20, 20, 0.82) 38%,
+      rgba(20, 20, 20, 0.74) 45%,
+      rgba(20, 20, 20, 0.65) 51%,
+      rgba(20, 20, 20, 0.55) 57%,
+      rgba(20, 20, 20, 0.45) 63%,
+      rgba(20, 20, 20, 0.40) 65%,
+      rgba(20, 20, 20, 0.26) 73%,
+      rgba(20, 20, 20, 0.11) 83%,
+      rgba(20, 20, 20, 0.05) 88%,
+      rgba(20, 20, 20, 0.01) 94%,
+      rgba(20, 20, 20, 0) 100%
     );
     width: 100dvw;
     height: 100%;
   }
 
   &__logo {
+    flex-shrink: 0;
 
     .logo-text {
       color: $color-accent-primary;
@@ -64,6 +66,11 @@
       img {
         height: 64px;
         width: 64px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -73,27 +80,76 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 411px;
-    height: 28px;
+    width: auto;
+    max-width: 70%;
     text-align: center;
     align-content: center;
+    white-space: nowrap;
+  }
 
-    .nav-list {
-      display: flex;
-      list-style: none;
-      gap: 16px;
+  .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-link {
+    color: $color-accent-primary;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 8px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $color-accent-primary;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateX(-50%);
+      border-radius: 1px;
     }
 
-    .nav-link {
-      color: $color-accent-primary;
-      text-decoration: none;
-      font-weight: 500;
+    &:hover::after {
+      width: 100%;
+      left: 0;
+      transform: translateX(0);
+    }
+
+    &.active::after {
+      width: 100% !important;
+      left: 0 !important;
+      transform: translateX(0) !important;
     }
   }
 
-  &__actions {
+  &__controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
 
+  &__actions,
+  &__mobile-actions {
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background-color: transparent;
       border: 2px solid $color-accent-primary;
       color: $color-accent-primary;
@@ -103,39 +159,60 @@
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba($color-accent-primary, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease, height 0.6s ease;
+      }
 
       &:hover {
         background-color: $color-accent-primary;
         color: $color-base-black;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($color-accent-primary, 0.3);
+
+        &::before {
+          width: 300px;
+          height: 300px;
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
       }
     }
   }
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .header {
-    height: auto;
-    padding: 1rem 0;
-
-    &__container {
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 0 20px;
+    .nav-list {
+      gap: 18px;
     }
 
-    &__nav .nav-list {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+    .nav-link {
+      font-size: 14px;
     }
+  }
+}
 
-    &__logo {
-      margin-left: 0;
-    }
-
-    &__actions {
-      margin-right: 0;
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    .nav-link,
+    &__actions .btn,
+    &__logo .logo-text img {
+      transition: none;
     }
   }
 }

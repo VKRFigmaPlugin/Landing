@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" data-header>
   <div class="header__container">
     <div class="header__logo">
       <a href="{{ url_for('index') }}" class="logo-text">
@@ -6,16 +6,38 @@
       </a>
     </div>
 
-    <nav class="header__nav">
+    <nav class="header__nav" id="header-navigation" aria-label="Основная навигация">
       <ul class="nav-list">
-        <li class="nav-item"><a href="#" class="nav-link">Возможности</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Как работает</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="{{ url_for('index') }}#pain-points" class="nav-link">Проблемы</a></li>
+        <li class="nav-item"><a href="{{ url_for('index') }}#features" class="nav-link">Что делает плагин</a></li>
+        <li class="nav-item"><a href="{{ url_for('index') }}#target-audience" class="nav-link">Для кого плагин</a></li>
+        <li class="nav-item"><a href="{{ url_for('index') }}#team" class="nav-link">О команде</a></li>
+        <li class="nav-item"><a href="{{ url_for('index') }}#faq" class="nav-link">FAQ</a></li>
       </ul>
+
+      <div class="header__mobile-actions">
+        <button type="button" class="btn btn--primary">Попробовать плагин</button>
+      </div>
     </nav>
 
-    <div class="header__actions">
-      <button class="btn btn--primary">Попробовать плагин</button>
+    <div class="header__controls">
+      <div class="header__actions">
+        <button type="button" class="btn btn--primary">Попробовать плагин</button>
+      </div>
+
+      <button
+        type="button"
+        class="header__burger"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="header-navigation"
+      >
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
     </div>
   </div>
+
+  <div class="header__overlay" aria-hidden="true"></div>
 </header>
