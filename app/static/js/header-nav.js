@@ -14,26 +14,39 @@
 
     const sections = ['pain-points', 'features', 'target-audience', 'team', 'faq'];
 
+    function getTargetId(link) {
+      const href = link.getAttribute('href') || '';
+      const hashIndex = href.indexOf('#');
+
+      if (hashIndex === -1) {
+        return '';
+      }
+
+      return href.slice(hashIndex + 1);
+    }
+
     function setActiveLink(targetId) {
       navLinks.forEach(link => {
-        const linkId = link.getAttribute('href').substring(1);
+        const linkId = getTargetId(link);
         link.classList.toggle('active', linkId === targetId);
       });
     }
 
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = getTargetId(this);
         const targetSection = document.getElementById(targetId);
         
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          setActiveLink(targetId);
+        if (!targetSection) {
+          return;
         }
+
+        e.preventDefault();
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        setActiveLink(targetId);
       });
     });
 
