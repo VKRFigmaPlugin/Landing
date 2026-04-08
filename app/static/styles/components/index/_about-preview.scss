@@ -7,10 +7,10 @@
     border-radius: 36px;
     padding: 40px;
     background:
-      linear-gradient(135deg, rgba($color-base-white, 0.08) 0%, rgba($color-base-white, 0.03) 100%),
-      rgba($color-background-raised, 0.34);
-    border: 1px solid rgba($color-accent-primary, 0.12);
-    box-shadow: 0 28px 70px rgba($color-base-black, 0.22);
+      linear-gradient(135deg, rgba(var(--color-base-white-rgb), 0.08) 0%, rgba(var(--color-base-white-rgb), 0.03) 100%),
+      rgba(var(--color-background-raised-rgb), 0.34);
+    border: 1px solid rgba(var(--color-accent-primary-rgb), 0.12);
+    box-shadow: 0 28px 70px rgba(var(--color-shadow-rgb), 0.22);
   }
 
   &__card::before,
@@ -27,7 +27,7 @@
     height: 260px;
     right: -30px;
     top: -90px;
-    background: radial-gradient(circle, rgba($color-accent-primary, 0.24) 0%, rgba($color-accent-primary, 0) 70%);
+    background: radial-gradient(circle, rgba(var(--color-accent-primary-rgb), 0.24) 0%, rgba(var(--color-accent-primary-rgb), 0) 70%);
   }
 
   &__card::after {
@@ -54,9 +54,9 @@
     padding: 0 16px;
     margin-bottom: 22px;
     border-radius: 999px;
-    border: 1px solid rgba($color-accent-primary, 0.14);
-    background: rgba($color-base-black, 0.18);
-    color: rgba($color-accent-primary, 0.84);
+    border: 1px solid rgba(var(--color-accent-primary-rgb), 0.14);
+    background: rgba(var(--color-base-black-rgb), 0.18);
+    color: rgba(var(--color-accent-primary-rgb), 0.84);
     font-family: "Montserrat", sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -88,7 +88,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 19px;
     line-height: 1.65;
-    color: rgba($color-base-white, 0.78);
+    color: rgba(var(--color-base-white-rgb), 0.78);
   }
 
   &__button {
@@ -111,8 +111,8 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba($color-accent-primary, 0.2);
-      background-color: darken($color-accent-primary, 4%);
+      box-shadow: 0 14px 34px rgba(var(--color-accent-primary-rgb), 0.2);
+      background-color: var(--color-accent-primary-hover);
     }
   }
 
@@ -125,10 +125,10 @@
     width: min(100%, 360px);
     padding: 28px;
     border-radius: 30px;
-    border: 1px solid rgba($color-accent-primary, 0.14);
+    border: 1px solid rgba(var(--color-accent-primary-rgb), 0.14);
     background:
-      linear-gradient(180deg, rgba($color-base-white, 0.08) 0%, rgba($color-base-white, 0.02) 100%),
-      rgba($color-base-black, 0.3);
+      linear-gradient(180deg, rgba(var(--color-base-white-rgb), 0.08) 0%, rgba(var(--color-base-white-rgb), 0.02) 100%),
+      rgba(var(--color-base-black-rgb), 0.3);
     backdrop-filter: blur(10px);
   }
 
@@ -150,7 +150,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: rgba($color-base-white, 0.72);
+    color: rgba(var(--color-base-white-rgb), 0.72);
   }
 
   &__chips {
