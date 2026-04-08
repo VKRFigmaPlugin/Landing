@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!track || !firstVisual || !secondVisual || !firstPanel || !secondPanel) return;
 
-    const mobileMedia = window.matchMedia('(max-width: 900px)');
-
     function resetDesktopState() {
         section.classList.remove('is-leaving-first', 'is-showing-second', 'is-switched');
 
@@ -23,11 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setPhase(progress) {
-        if (mobileMedia.matches) {
-            resetDesktopState();
-            return;
-        }
-
         // Фазы:
         // 0.00 - 0.56  -> первый слайд остаётся видимым
         // 0.56 - 1.00  -> показываем второй слайд
@@ -51,10 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateOnScroll() {
-        if (mobileMedia.matches) {
-            resetDesktopState();
-            return;
-        }
 
         const rect = track.getBoundingClientRect();
         const scrollable = track.offsetHeight - window.innerHeight;
@@ -70,17 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setPhase(progress);
     }
 
-    function handleChange() {
-        if (mobileMedia.matches) {
-            resetDesktopState();
-        } else {
-            updateOnScroll();
-        }
-    }
-
     window.addEventListener('scroll', updateOnScroll, { passive: true });
-    window.addEventListener('resize', handleChange);
-    mobileMedia.addEventListener('change', handleChange);
 
     updateOnScroll();
 });

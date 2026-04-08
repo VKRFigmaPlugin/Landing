@@ -17,7 +17,7 @@
     const burger = header.querySelector('.header__burger');
     const nav = header.querySelector('.header__nav');
     const overlay = header.querySelector('.header__overlay');
-    const navLinks = header.querySelectorAll('.header__nav .nav-link');
+    const navLinks = header.querySelectorAll('.header__nav a');
     const desktopMedia = window.matchMedia('(max-width: 1024px)');
 
     if (!burger || !nav || !overlay) {

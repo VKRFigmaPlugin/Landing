@@ -7,6 +7,21 @@
     </div>
 
     <nav class="header__nav" id="header-navigation" aria-label="Основная навигация">
+      <div class="header__mobile-pages" aria-label="Навигация по страницам">
+        <a
+          href="{{ url_for('index') }}"
+          class="header__mobile-page-link{% if request.endpoint == 'index' %} is-active{% endif %}"
+        >
+          Главная
+        </a>
+        <a
+          href="{{ url_for('about') }}"
+          class="header__mobile-page-link{% if request.endpoint == 'about' %} is-active{% endif %}"
+        >
+          О нас
+        </a>
+      </div>
+
       <ul class="nav-list">
         <li class="nav-item"><a href="{{ url_for('index') }}#pain-points" class="nav-link">Проблемы</a></li>
         <li class="nav-item"><a href="{{ url_for('index') }}#features" class="nav-link">Что делает плагин</a></li>
