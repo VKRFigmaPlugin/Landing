@@ -78,6 +78,7 @@
 
       &:hover {
         transform: scale(1.05);
+
         &:after {
           width: 100%;
         }
@@ -104,6 +105,39 @@
     img {
       height: 64px;
       width: 64px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 162px;
+  }
+
+  @media (max-width: 768px) {
+
+    &:before {
+      top: -20px;
+      height: 109%;
+    }
+
+    &__text-container {
+      top: -80px;
+
+      &-title {
+        font-size: 20px;
+      }
+    }
+
+    &__content {
+      position: relative;
+      padding-top: 20px;
+    }
+
+    &__button--go-plugin {
+      position: absolute;
+      left: 50%;
+      top: -30px;
+      transform: translateX(-50%) !important;
+      width: max-content;
     }
   }
 }

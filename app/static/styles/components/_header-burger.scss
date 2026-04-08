@@ -3,6 +3,7 @@ body.header-menu-open {
 }
 
 .header {
+  &__mobile-pages,
   &__mobile-actions,
   &__burger,
   &__overlay {
@@ -59,9 +60,51 @@ body.header-menu-open {
     .nav-list,
     .nav-item,
     .nav-link,
+    &__mobile-pages,
+    &__mobile-page-link,
     &__mobile-actions {
       position: relative;
       z-index: 1;
+    }
+
+    &__mobile-pages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba($color-accent-primary, 0.12);
+    }
+
+    &__mobile-page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 18px;
+      border: 1px solid rgba($color-accent-primary, 0.12);
+      background: rgba($color-base-white, 0.05);
+      color: rgba($color-base-white, 0.84);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+      &:hover,
+      &.is-active {
+        transform: translateY(-2px);
+        border-color: rgba($color-accent-primary, 0.22);
+        background: rgba($color-accent-primary, 0.12);
+        color: $color-accent-primary;
+      }
     }
 
     .nav-list {
@@ -270,6 +313,17 @@ body.header-menu-open {
       max-height: calc(100dvh - 108px);
     }
 
+    &__mobile-pages {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+
+    &__mobile-page-link {
+      min-height: 48px;
+      border-radius: 16px;
+      font-size: 14px;
+    }
+
     .nav-link {
       min-height: 60px;
       padding: 0 48px 0 50px;
@@ -305,6 +359,17 @@ body.header-menu-open {
       border-radius: 24px;
     }
 
+    &__mobile-pages {
+      gap: 8px;
+    }
+
+    &__mobile-page-link {
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
     .nav-link {
       min-height: 56px;
       padding: 0 44px 0 46px;
@@ -316,6 +381,7 @@ body.header-menu-open {
 
 @media (prefers-reduced-motion: reduce) {
   .header {
+    &__mobile-page-link,
     &__burger,
     &__burger-line,
     &__nav,

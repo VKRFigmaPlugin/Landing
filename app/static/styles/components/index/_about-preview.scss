@@ -71,7 +71,7 @@
   &__title-line {
     display: block;
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(38px, 5vw, 62px);
+    font-size: clamp(30px, 4vw, 62px);
     line-height: 0.98;
     letter-spacing: -0.04em;
     font-weight: 700;
@@ -200,13 +200,21 @@
 
 @media (max-width: 1024px) {
   .about-preview {
-    &__content {
-      grid-template-columns: 1fr;
-      gap: 32px;
+    &__card {
+      padding: 30px;
+      border-radius: 18px;
     }
 
-    &__visual {
-      justify-content: flex-start;
+    &__content {
+      grid-template-columns: minmax(0, 1.2fr) 1fr;
+    }
+
+    &__description {
+      font-size: 17px;
+    }
+
+    &__metric-value {
+      font-size: 48px;
     }
   }
 }
@@ -225,28 +233,17 @@
     }
 
     &__metric-value {
-      font-size: 52px;
+      font-size: 30px;
     }
-  }
-}
 
-@media (max-width: 480px) {
-  .about-preview {
-    &__card {
-      padding: 24px 20px;
+    &__content {
+      grid-template-columns: none;
+      grid-auto-flow: row;
     }
 
     &__button {
       width: 100%;
-    }
-
-    &__panel {
-      padding: 22px;
-      border-radius: 24px;
-    }
-
-    &__metric-value {
-      font-size: 44px;
+      padding: 0;
     }
   }
 }

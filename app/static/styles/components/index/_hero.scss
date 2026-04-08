@@ -168,7 +168,11 @@
     padding-top: 60px;
     
     &__slider {
-      height: 85px;
+      height: 153px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
     }
     
     &__title-line-1,

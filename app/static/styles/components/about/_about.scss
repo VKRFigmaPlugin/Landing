@@ -5,9 +5,8 @@
 .js-reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  transition: opacity 0.7s ease,
+  transform 0.7s ease;
   transition-delay: var(--reveal-delay, 0ms);
 
   &.is-visible {
@@ -17,35 +16,7 @@
 }
 
 .about-section-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
   margin-bottom: 56px;
-
-  &--compact {
-    margin-bottom: 40px;
-  }
-
-  &__title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 50px;
-    line-height: 1.1;
-    font-weight: 600;
-    color: $color-accent-primary;
-    margin: 0;
-    max-width: 520px;
-  }
-
-  &__description {
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    font-weight: 400;
-    color: rgba($color-base-white, 0.72);
-    margin: 0;
-    max-width: 620px;
-  }
 }
 
 .about-hero {
@@ -147,9 +118,8 @@
     padding: 28px;
     border-radius: 32px;
     border: 1px solid rgba($color-accent-primary, 0.18);
-    background:
-      linear-gradient(180deg, rgba($color-base-white, 0.08) 0%, rgba($color-base-white, 0.03) 100%),
-      rgba($color-base-black, 0.65);
+    background: linear-gradient(180deg, rgba($color-base-white, 0.08) 0%, rgba($color-base-white, 0.03) 100%),
+    rgba($color-base-black, 0.65);
     backdrop-filter: blur(18px);
     box-shadow: 0 30px 80px rgba($color-base-black, 0.34);
   }
@@ -226,25 +196,23 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    align-items: stretch;
   }
 }
 
 .team-card {
   position: relative;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   padding: 28px;
   border-radius: 28px;
   border: 1px solid rgba($color-accent-primary, 0.12);
-  background:
-    linear-gradient(180deg, rgba($color-base-white, 0.06) 0%, rgba($color-base-white, 0.02) 100%),
-    rgba($color-background-raised, 0.46);
+  background: linear-gradient(180deg, rgba($color-base-white, 0.06) 0%, rgba($color-base-white, 0.02) 100%),
+  rgba($color-background-raised, 0.46);
   overflow: hidden;
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+  transition: transform 0.4s ease,
+  border-color 0.4s ease,
+  box-shadow 0.4s ease;
 
   &::before {
     content: "";
@@ -280,9 +248,9 @@
   }
 
   &__top {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 16px;
     margin-bottom: 42px;
   }
@@ -377,40 +345,21 @@
   padding: 110px 0;
 
   &__intro {
-    display: grid;
-    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-    gap: 52px;
-    align-items: start;
     margin-bottom: 56px;
-  }
-
-  &__title {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    font-size: 50px;
-    line-height: 1.1;
-    font-weight: 600;
-    color: $color-base-white;
-  }
-
-  &__description {
-    margin: 0;
-    max-width: 760px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 22px;
-    line-height: 1.65;
-    color: rgba($color-accent-primary, 0.82);
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    align-items: stretch;
   }
 }
 
 .approach-card {
   min-height: 240px;
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   border-radius: 28px;
   background: rgba($color-base-white, 0.04);
@@ -452,18 +401,20 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+    align-items: stretch;
   }
 }
 
 .principle-card {
   min-height: 220px;
+  display: flex;
+  flex-direction: column;
   padding: 26px;
   border-radius: 26px;
   background: rgba($color-base-white, 0.04);
   border: 1px solid rgba($color-accent-primary, 0.1);
-  transition:
-    transform 0.35s ease,
-    background-color 0.35s ease;
+  transition: transform 0.35s ease,
+  background-color 0.35s ease;
 
   &:hover {
     transform: translateY(-8px);
@@ -607,6 +558,26 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .about-team__grid > .team-card:last-child,
+  .about-approach__grid > .approach-card:last-child {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: calc(50% - 12px);
+    justify-self: center;
+  }
+
+  .about-hero__pill--frontend {
+    top: 0;
+  }
+
+  .about-hero__pill--backend {
+    top: 0;
+  }
+
+  .about-hero__pill--design {
+    bottom: -38px;
+  }
+
   .about-principles__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -619,17 +590,6 @@
 
     &__visual {
       min-height: 420px;
-    }
-  }
-
-  .about-section-header {
-    flex-direction: column;
-  }
-
-  .about-approach {
-    &__intro {
-      grid-template-columns: 1fr;
-      gap: 24px;
     }
   }
 }
@@ -663,16 +623,6 @@
     margin-bottom: 40px;
   }
 
-  .about-section-header__title,
-  .about-approach__title {
-    font-size: 38px;
-  }
-
-  .about-section-header__description,
-  .about-approach__description {
-    font-size: 18px;
-  }
-
   .about-team {
     padding: 88px 0 48px;
   }
@@ -682,8 +632,89 @@
     padding: 88px 0 48px;
   }
 
+  .team-card {
+    padding: 26px;
+
+    &__top {
+      margin-bottom: 32px;
+      gap: 14px;
+    }
+
+    &__avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      font-size: 24px;
+    }
+
+    &__name {
+      margin-bottom: 14px;
+      font-size: 26px;
+    }
+
+    &__stack {
+      padding-top: 22px;
+      gap: 8px;
+    }
+
+    &__stack-item {
+      min-height: 34px;
+      padding: 0 12px;
+      font-size: 13px;
+    }
+  }
+
+  .about-approach__grid,
+  .about-principles__grid {
+    gap: 20px;
+  }
+
+  .approach-card {
+    min-height: 220px;
+    padding: 26px;
+
+    &__number {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+  }
+
+  .principle-card {
+    min-height: 200px;
+    padding: 24px;
+
+    &__icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+  }
+
   .about-closing__card {
     padding: 36px 28px;
+  }
+
+  .about-closing__card::before {
+    width: 190px;
+    height: 190px;
+    right: -44px;
+    top: -44px;
+  }
+
+  .about-closing__card::after {
+    width: 180px;
+    height: 180px;
+    left: -46px;
+    bottom: -70px;
   }
 }
 
@@ -694,21 +725,63 @@
     grid-template-columns: 1fr;
   }
 
+  .about-team__grid > .team-card:last-child,
+  .about-approach__grid > .approach-card:last-child {
+    grid-column: auto;
+    max-width: calc(100% - 44px);
+    justify-self: stretch;
+  }
+
   .team-card,
   .approach-card,
   .principle-card {
     padding: 24px;
+    min-height: auto;
   }
 
   .team-card__name,
   .approach-card__title {
     font-size: 24px;
   }
+
+  .team-card__top {
+    margin-bottom: 28px;
+  }
+
+  .team-card__avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .principle-card__title {
+    font-size: 22px;
+  }
+
+  .about-closing__card {
+    padding: 34px 26px;
+  }
+
+  .about-closing__title {
+    margin: 18px 0 14px;
+    font-size: clamp(32px, 8vw, 46px);
+  }
+
+  .about-closing__description {
+    max-width: none;
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 560px) {
   .about-hero {
     padding-top: 0;
+
+    &__summary {
+      width: calc(100% - 36px);
+    }
 
     &__eyebrow {
       margin-bottom: 18px;
@@ -755,18 +828,103 @@
     }
   }
 
-  .about-section-header__title,
-  .about-approach__title {
-    font-size: 32px;
-  }
-
-  .about-section-header__description,
-  .about-approach__description,
   .principle-card__text,
   .team-card__description,
   .approach-card__text,
   .about-closing__description {
     font-size: 15px;
+  }
+
+  .about-section-header,
+  .about-approach__intro {
+    margin-bottom: 32px;
+  }
+
+  .about-team {
+    padding: 72px 0 40px;
+  }
+
+  .about-approach,
+  .about-principles {
+    padding: 72px 0 40px;
+  }
+
+  .about-team__grid,
+  .about-approach__grid,
+  .about-principles__grid {
+    gap: 16px;
+  }
+
+  .team-card,
+  .approach-card,
+  .principle-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .team-card {
+    &__top {
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    &__role {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    &__index {
+      font-size: 13px;
+    }
+
+    &__avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    &__name {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    &__stack {
+      padding-top: 18px;
+    }
+
+    &__stack-item {
+      min-height: 32px;
+      font-size: 12px;
+    }
+  }
+
+  .approach-card {
+    &__number {
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+  }
+
+  .principle-card {
+    &__icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
   }
 
   .about-closing {
@@ -775,6 +933,69 @@
     &__card {
       padding: 32px 22px;
       border-radius: 28px;
+    }
+
+    &__card::before {
+      width: 160px;
+      height: 160px;
+      right: -52px;
+      top: -40px;
+    }
+
+    &__card::after {
+      width: 148px;
+      height: 148px;
+      left: -54px;
+      bottom: -64px;
+    }
+
+    &__eyebrow {
+      min-height: 34px;
+      padding: 0 14px;
+      font-size: 12px;
+    }
+
+    &__title {
+      margin: 18px 0 14px;
+      font-size: 30px;
+      line-height: 1;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .about-hero {
+    &__title-line {
+      font-size: 44px;
+    }
+
+    &__visual {
+      min-height: auto;
+    }
+
+    &__summary {
+      padding: 18px;
+    }
+
+    &__summary-item {
+      gap: 8px;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
+
+    &__summary-value {
+      font-size: 32px;
+    }
+  }
+
+  .about-closing {
+    &__card {
+      padding: 28px 20px;
+      border-radius: 24px;
+    }
+
+    &__title {
+      font-size: 28px;
     }
   }
 }

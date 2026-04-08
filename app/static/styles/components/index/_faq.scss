@@ -16,34 +16,7 @@
   }
 
   &__header {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
     margin-bottom: 50px;
-    justify-content: space-between;
-  }
-
-  &__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 50px;
-    line-height: 1.2;
-    color: $color-accent-primary;
-    flex-shrink: 0;
-    margin: 0;
-  }
-
-  &__description {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 15px; 
-    line-height: 1.5;
-    color: rgba($color-base-white, 0.6);
-    max-width: 700px;
-    margin: 0;
-    white-space: nowrap;
-    position: relative;
-    left: -100px;
   }
 
   &__list {
@@ -128,63 +101,21 @@
     border-bottom: 2px solid $color-accent-primary;
   }
 
-  @media (max-width: 1200px) {
-    &__description {
-      white-space: normal;
-      left: -5px; 
+  @media (max-width: 1024px) {
+    padding-top: 60px;
+
+    &__question {
+      font-size: 18px;
+      padding: 18px;
     }
   }
 
-  @media (max-width: 900px) {
-    padding: 60px 0;
-
-    &__header {
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
-      justify-content: flex-start;
-    }
-
-    &__title {
-      font-size: 40px;
-    }
-
-    &__description {
-      font-size: 17px;
-      left: 0;
-      white-space: normal;
-    }
+  @media (max-width: 768px) {
+    padding-top: 40px;
 
     &__question {
       font-size: 16px;
-      padding: 16px 20px;
-    }
-
-    &__answer-content {
-      font-size: 14px;
-      padding: 16px 20px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding: 40px 0;
-
-    &__title {
-      font-size: 32px;
-    }
-
-    &__description {
-      font-size: 16px;
-    }
-
-    &__question {
-      font-size: 15px;
-      padding: 14px 16px;
-    }
-
-    &__answer-content {
-      font-size: 13px;
-      padding: 14px 16px;
+      padding: 12px;
     }
   }
 }
