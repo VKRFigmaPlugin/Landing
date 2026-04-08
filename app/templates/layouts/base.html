@@ -4,6 +4,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg') }}">
 
+  <script>
+    (function() {
+      var storageKey = 'preferred-theme';
+      var theme = 'dark';
+
+      try {
+        var savedTheme = localStorage.getItem(storageKey);
+        var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+          theme = savedTheme;
+        } else if (prefersLight) {
+          theme = 'light';
+        }
+      } catch (error) {}
+
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 
   
@@ -20,6 +40,7 @@
 {% include 'components/elements/footer.html' %}
 </div>
 
+<script src="{{ url_for('static', filename='js/theme-toggle.js') }}"></script>
 <script src="{{ url_for('static', filename='js/header-menu.js') }}"></script>
 {% block scripts %}{% endblock %}
 </body>

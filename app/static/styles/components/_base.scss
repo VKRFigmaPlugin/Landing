@@ -12,6 +12,12 @@ button, a {
   outline: none;
 }
 
+.theme-icon-on-accent {
+  display: block;
+  filter: var(--theme-icon-on-accent-filter);
+  transition: filter 0.3s ease;
+}
+
 html {
   scroll-behavior: smooth;
   overscroll-behavior: none;
