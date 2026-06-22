@@ -7,11 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const secondVisual = section.querySelector('.target-audience__visual--2');
     const firstPanel = section.querySelector('.target-audience__panel--1');
     const secondPanel = section.querySelector('.target-audience__panel--2');
+    const progressPercent = section.querySelector('.target-audience__mobile-progress-percent');
+    const progressText = section.querySelector('.target-audience__mobile-progress-text');
+    const progressSteps = section.querySelectorAll('.target-audience__mobile-progress-step');
 
     if (!track || !firstVisual || !secondVisual || !firstPanel || !secondPanel) return;
 
     function resetDesktopState() {
         section.classList.remove('is-leaving-first', 'is-showing-second', 'is-switched');
+        section.style.setProperty('--target-audience-progress', '0%');
+
+        if (progressPercent) progressPercent.textContent = '0%';
+        if (progressText) progressText.textContent = 'Прокрутите, чтобы увидеть следующую аудиторию';
+        progressSteps.forEach((step, index) => step.classList.toggle('is-active', index === 0));
 
         firstVisual.classList.add('is-active');
         firstPanel.classList.add('is-active');
@@ -35,6 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.toggle('is-leaving-first', isLeavingFirst);
         section.classList.toggle('is-showing-second', isShowingSecond);
         section.classList.toggle('is-switched', isShowingSecond);
+        section.style.setProperty('--target-audience-progress', `${Math.round(progress * 100)}%`);
+
+        if (progressPercent) progressPercent.textContent = `${Math.round(progress * 100)}%`;
+        if (progressText) {
+            progressText.textContent = isShowingSecond
+                ? 'Второй блок открыт, можно прокручивать дальше'
+                : 'Прокрутите, чтобы увидеть следующую аудиторию';
+        }
+        progressSteps.forEach((step, index) => step.classList.toggle('is-active', index === (isShowingSecond ? 1 : 0)));
 
         firstVisual.classList.toggle('is-active', isShowingFirst);
         firstPanel.classList.toggle('is-active', isShowingFirst);
