@@ -190,10 +190,6 @@
 
 @media (max-width: 768px) {
   .target-audience {
-    &__track {
-      height: 240vh;
-    }
-
     &__content {
       grid-template-rows: 400px 1fr;
       grid-auto-flow: row;
@@ -214,7 +210,7 @@
     }
 
     &__right {
-      padding-bottom: 126px;
+      min-height: 0;
     }
 
     &__mobile-progress {
