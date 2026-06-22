@@ -293,6 +293,7 @@
   &__block {
 
     &--second {
+      overflow: hidden;
       margin-top: 150px;
 
       .features__subitem {
@@ -331,10 +332,9 @@
           position: absolute;
           inset: -64px -52px;
           border-radius: 34px;
-          background:
-            radial-gradient(circle at 28% 30%, rgba(var(--color-accent-primary-rgb), 0.34) 0, rgba(var(--color-accent-primary-rgb), 0) 52%),
-            radial-gradient(circle at 72% 70%, rgba(#d68166, 0.3) 0, rgba(#d68166, 0) 50%),
-            radial-gradient(circle at 66% 24%, rgba(#ffffff, 0.24) 0, rgba(#ffffff, 0) 48%);
+          background: radial-gradient(circle at 28% 30%, rgba(var(--color-accent-primary-rgb), 0.34) 0, rgba(var(--color-accent-primary-rgb), 0) 52%),
+          radial-gradient(circle at 72% 70%, rgba(#d68166, 0.3) 0, rgba(#d68166, 0) 50%),
+          radial-gradient(circle at 66% 24%, rgba(#ffffff, 0.24) 0, rgba(#ffffff, 0) 48%);
           filter: blur(10px);
           opacity: 0.78;
           -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 28%, rgba(0, 0, 0, 0.65) 56%, rgba(0, 0, 0, 0) 86%);
@@ -348,9 +348,8 @@
           position: absolute;
           inset: -48px;
           border-radius: 30px;
-          background-image:
-            linear-gradient(rgba(var(--color-base-white-rgb), 0.14) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(var(--color-base-white-rgb), 0.14) 1px, transparent 1px);
+          background-image: linear-gradient(rgba(var(--color-base-white-rgb), 0.14) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(var(--color-base-white-rgb), 0.14) 1px, transparent 1px);
           background-size: 32px 32px;
           opacity: 0.16;
           -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.86) 30%, rgba(0, 0, 0, 0.5) 56%, rgba(0, 0, 0, 0) 82%);
@@ -533,6 +532,7 @@
       text-align: center;
       font-weight: 600;
       font-size: 20px;
+
       br {
         display: none;
       }
@@ -598,6 +598,7 @@
 
     &__subitem {
       --features-subitem-transform: scale(1) translateY(0);
+
       &:first-child {
         --features-subitem-transform: scale(1) translateY(0);
       }

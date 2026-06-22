@@ -2102,6 +2102,7 @@ body.header-menu-open {
   white-space: nowrap;
 }
 .features__block--second {
+  overflow: hidden;
   margin-top: 150px;
 }
 .features__block--second .features__subitem--images {
